@@ -1,0 +1,16 @@
+{
+	"name": "ADLAArinIIS",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "Linked Service to connect to the analytics Account",
+		"type": "AzureDataLakeAnalytics",
+		"typeProperties": {
+			"accountName": "ariniisdemo",
+			"servicePrincipalId": "12205782-035a-4a3d-ae5f-380cbd087d78",
+			"tenant": "25747bfe-2e65-4691-ad6b-7d5c45886606",
+			"subscriptionId": "93929f67-d382-4d7f-bb8c-d63c3e51366b",
+			"resourceGroupName": "arin",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkFSSU5JSVNBREZfN2E4ZTMwMmMtZjVmYi00ODRkLThiNjktYTVjMjRiN2EwN2IxIg0KfQ=="
+		}
+	}
+}

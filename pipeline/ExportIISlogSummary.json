@@ -1,0 +1,123 @@
+{
+	"name": "ExportIISlogSummary",
+	"properties": {
+		"activities": [
+			{
+				"name": "ImportIPdata",
+				"type": "DataLakeAnalyticsU-SQL",
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"scriptPath": "USQLScripts/UploadLogData.usql",
+					"degreeOfParallelism": 5,
+					"scriptLinkedService": {
+						"referenceName": "ADLSiistxtLS",
+						"type": "LinkedServiceReference"
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "ADLAArinIIS",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "ImportIPLocationDetails",
+				"type": "DataLakeAnalyticsU-SQL",
+				"dependsOn": [
+					{
+						"activity": "ImportIPdata",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"scriptPath": "USQLScripts/UploadIP.usql",
+					"degreeOfParallelism": 5,
+					"scriptLinkedService": {
+						"referenceName": "ADLSiistxtLS",
+						"type": "LinkedServiceReference"
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "ADLAArinIIS",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "InserttoVisitSummary",
+				"type": "DataLakeAnalyticsU-SQL",
+				"dependsOn": [
+					{
+						"activity": "ImportIPLocationDetails",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"scriptPath": "USQLScripts/Crossapply.usql",
+					"degreeOfParallelism": 5,
+					"scriptLinkedService": {
+						"referenceName": "ADLSiistxtLS",
+						"type": "LinkedServiceReference"
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "ADLAArinIIS",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "createOutputCsv",
+				"type": "DataLakeAnalyticsU-SQL",
+				"dependsOn": [
+					{
+						"activity": "InserttoVisitSummary",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"scriptPath": "USQLScripts/OutputData.usql",
+					"scriptLinkedService": {
+						"referenceName": "ADLSiistxtLS",
+						"type": "LinkedServiceReference"
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "ADLAArinIIS",
+					"type": "LinkedServiceReference"
+				}
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

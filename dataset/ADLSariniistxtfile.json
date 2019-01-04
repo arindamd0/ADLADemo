@@ -1,0 +1,86 @@
+{
+	"name": "ADLSariniistxtfile",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ADLSiistxtLS",
+			"type": "LinkedServiceReference"
+		},
+		"type": "AzureDataLakeStoreFile",
+		"structure": [
+			{
+				"name": "date",
+				"type": "String"
+			},
+			{
+				"name": "time",
+				"type": "String"
+			},
+			{
+				"name": "c-ip",
+				"type": "String"
+			},
+			{
+				"name": "cs-username",
+				"type": "String"
+			},
+			{
+				"name": "s-ip",
+				"type": "String"
+			},
+			{
+				"name": "s-port",
+				"type": "String"
+			},
+			{
+				"name": "cs-method",
+				"type": "String"
+			},
+			{
+				"name": "cs-uri-stem",
+				"type": "String"
+			},
+			{
+				"name": "cs-uri-query",
+				"type": "String"
+			},
+			{
+				"name": "sc-status",
+				"type": "String"
+			},
+			{
+				"name": "sc-bytes",
+				"type": "String"
+			},
+			{
+				"name": "cs-bytes",
+				"type": "String"
+			},
+			{
+				"name": "time-taken",
+				"type": "String"
+			},
+			{
+				"name": "cs(User-Agent)",
+				"type": "String"
+			},
+			{
+				"name": "cs(Referrer)",
+				"type": "String"
+			}
+		],
+		"typeProperties": {
+			"format": {
+				"type": "TextFormat",
+				"columnDelimiter": " ",
+				"rowDelimiter": "",
+				"nullValue": "\\N",
+				"treatEmptyAsNull": true,
+				"skipLineCount": 3,
+				"firstRowAsHeader": true
+			},
+			"fileName": "*.txt",
+			"folderPath": "iislogs"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
