@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CSSRelatedInfo>
+  <ScopeCounters>
+    <Counter Name="Overall" Value="2.3750719" Unit="second" Intervals="1" />
+    <Counter Name="FrontEndRun" Value="1.4295067" Unit="second" Intervals="1" />
+    <Counter Name="AstBuilder" Value="1.3780302" Unit="second" Intervals="1" />
+    <Counter Name="DdlResolver" Value="0.7138408" Unit="second" Intervals="1" />
+    <Counter Name="GeneratedFilesAsync" Value="0.0436775" Unit="second" Intervals="2" />
+    <Counter Name="ReferenceLoading" Value="0.0018623" Unit="second" Intervals="2" />
+    <Counter Name="ResourcesDownloading" Value="0.0015395" Unit="second" Intervals="2" />
+    <Counter Name="SyntaxVerifier" Value="0.1503702" Unit="second" Intervals="1" />
+    <Counter Name="RoslynStartup" Value="0.1200943" Unit="second" Intervals="2" />
+    <Counter Name="ConstantFolding" Value="0.4348877" Unit="second" Intervals="1" />
+    <Counter Name="SMS" Value="0.094777" Unit="second" Intervals="2" />
+    <Counter Name="WaitForAsyncFiles" Value="0.0378496" Unit="second" Intervals="1" />
+    <Counter Name="Playback" Value="0.04075" Unit="second" Intervals="1" />
+    <Counter Name="Table Files Read" Value="0" Unit="count" />
+  </ScopeCounters>
+</CSSRelatedInfo>

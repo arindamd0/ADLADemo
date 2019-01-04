@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CompileResult scriptPath="C:\Users\achowdhury\source\repos\ADLADemo\ADLADemo\bin\Debug\UploadIP\UploadIP.usql"><Error><Start>25895</Start><End>25905</End><Message>E_CSC_USER_DDLENTITYDOESNOTEXIST: Assembly 'WebLogData.Ariniisdemo' does not exist.
+Description:
+No entity of the required type has the specified name.
+Resolution:
+Either check that the name is correct or create an entity with the specified name.... at token 'WebLogData', line 15
+near the ###:
+**************
+ehind_v5sl1ua5.dbx.pdb");
+
+REFERENCE ASSEMBLY [__codeBehind_v5sl1ua5.dbx];
+
+
+
+// Auto-generated header code ended
+
+// User script
+
+REFERENCE ASSEMBLY  ### WebLogData.Ariniisdemo;
+USING x = Ariniisdemo.Convertor;
+
+DROP TABLE IF EXISTS WebLogData.dbo.IPs;
+
+CREATE TABLE WebLogData.dbo.IPs (
+            ip_start</Message></Error><Error><Start>25920</Start><End>25925</End><Message>E_CSC_USER_INVALIDCSHARP: C# error CS0246: The type or namespace name 'Ariniisdemo' could not be found (are you missing a using directive or an assembly reference?)
+Description:
+C# compiler reported that this expression is not valid C#.
+Resolution:
+Make sure that a valid C# expression is specified.... at token 'USING', line 16
+near the ###:
+**************
+
+
+REFERENCE ASSEMBLY [__codeBehind_v5sl1ua5.dbx];
+
+
+
+// Auto-generated header code ended
+
+// User script
+
+REFERENCE ASSEMBLY WebLogData.Ariniisdemo;
+ ### USING x = Ariniisdemo.Convertor;
+
+DROP TABLE IF EXISTS WebLogData.dbo.IPs;
+
+CREATE TABLE WebLogData.dbo.IPs (
+            ip_start    string,
+            </Message></Error></CompileResult>

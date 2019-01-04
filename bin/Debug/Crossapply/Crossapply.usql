@@ -1,0 +1,31 @@
+// Auto-generated header code
+
+// Auto-generated header code ended
+
+// User script
+
+TRUNCATE TABLE WebLogData.dbo.VisitSummary;
+
+@data =
+           SELECT Year, Month, Day, IPInt, TotalVisits
+           FROM WebLogData.dbo.WebLogs
+           WHERE IPInt > 0;
+
+INSERT INTO WebLogData.dbo.VisitSummary
+SELECT D.Year,
+       D.Month,
+       D.Day,
+       (String.IsNullOrEmpty(I.state) ? I.city+", "+I.country : I.city+",    "+I.state+", "+I.country) AS Locaton,          
+      D.TotalVisits
+FROM @data  AS D
+     CROSS JOIN
+         WebLogData.dbo.IPs AS I
+WHERE D.IPInt BETWEEN I.ip_start_int AND I.ip_end_int;
+
+// User script ended
+
+// Auto-generated footer code
+
+
+// Auto-generated footer code ended
+

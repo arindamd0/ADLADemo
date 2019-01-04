@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<USqlMergeResultInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <HasError>false</HasError>
+  <MergedCodeHeaderLines>6</MergedCodeHeaderLines>
+  <OriginalCodeOffset>90</OriginalCodeOffset>
+  <MergedCodeFooterLines>8</MergedCodeFooterLines>
+  <UserScriptLines>29</UserScriptLines>
+</USqlMergeResultInfo>

@@ -1,0 +1,7 @@
+﻿@rs1 =
+    SELECT *
+    FROM WebLogData.dbo.VisitSummary;
+
+OUTPUT @rs1  
+    TO "/outputs/log_data.csv"
+    USING Outputters.Csv();

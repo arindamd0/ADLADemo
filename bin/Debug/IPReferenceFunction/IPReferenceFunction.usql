@@ -1,0 +1,43 @@
+// Auto-generated header code
+
+// Auto-generated header code ended
+
+// User script
+
+DROP FUNCTION IF EXISTS WebLogData.dbo.ProcessIPs;
+
+CREATE FUNCTION WebLogData.dbo.ProcessIPs()
+RETURNS @result TABLE
+(
+    ip_start string,
+    ip_end string,
+    continent string,
+    country string,
+    state string,
+    city string,
+    latitude string,
+    longitude string
+)
+AS
+BEGIN
+    @result = EXTRACT
+    ip_start string,
+    ip_end string,
+    continent string,
+    country string,
+    state string,
+    city string,
+    latitude string,
+    longitude string
+    FROM @"/ipdb/{*}.csv"
+    USING Extractors.Csv(silent:true);
+    RETURN;
+END;
+
+// User script ended
+
+// Auto-generated footer code
+
+
+// Auto-generated footer code ended
+

@@ -1,0 +1,68 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>197b4dcc-58e1-4d75-8f9f-199301f2d2a4</ProjectGuid>
+    <OutputType>File</OutputType>
+    <AssemblyName>ADLADemo.usqlpack</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <USQLProjectVersion>2</USQLProjectVersion>
+    <Name>ADLADemo</Name>
+    <RootNamespace>ADLADemo</RootNamespace>
+    <RuntimeVersion>default</RuntimeVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Script Include="CombineMethod.usql" />
+    <Script Include="CreateDb.usql" />
+    <Script Include="Crossapply.usql" />
+    <Script Include="IPReferenceFunction.usql" />
+    <Script Include="LogExtractorFunction.usql" />
+    <Script Include="OutputData.usql" />
+    <Script Include="test.usql" />
+    <Script Include="UploadIP.usql" />
+    <Script Include="UploadLogData.usql" />
+    <Script Include="VisitsSummaryTable.usql" />
+    <ScriptCode Include="CombineMethod.usql.cs">
+      <DependentUpon>CombineMethod.usql</DependentUpon>
+    </ScriptCode>
+    <ScriptCode Include="CreateDb.usql.cs">
+      <DependentUpon>CreateDb.usql</DependentUpon>
+    </ScriptCode>
+    <ScriptCode Include="Crossapply.usql.cs">
+      <DependentUpon>Crossapply.usql</DependentUpon>
+    </ScriptCode>
+    <ScriptCode Include="IPReferenceFunction.usql.cs">
+      <DependentUpon>IPReferenceFunction.usql</DependentUpon>
+    </ScriptCode>
+    <ScriptCode Include="LogExtractorFunction.usql.cs">
+      <DependentUpon>LogExtractorFunction.usql</DependentUpon>
+    </ScriptCode>
+    <ScriptCode Include="OutputData.usql.cs">
+      <DependentUpon>OutputData.usql</DependentUpon>
+    </ScriptCode>
+    <ScriptCode Include="test.usql.cs">
+      <DependentUpon>test.usql</DependentUpon>
+    </ScriptCode>
+    <ScriptCode Include="UploadIP.usql.cs">
+      <DependentUpon>UploadIP.usql</DependentUpon>
+    </ScriptCode>
+    <ScriptCode Include="UploadLogData.usql.cs">
+      <DependentUpon>UploadLogData.usql</DependentUpon>
+    </ScriptCode>
+    <ScriptCode Include="VisitsSummaryTable.usql.cs">
+      <DependentUpon>VisitsSummaryTable.usql</DependentUpon>
+    </ScriptCode>
+  </ItemGroup>
+  <!-- check for SDK Build target in current path then in USQLSDKPath-->
+  <Import Project="UsqlSDKBuild.targets" Condition="Exists('UsqlSDKBuild.targets')" />
+  <Import Project="$(USQLSDKPath)\UsqlSDKBuild.targets" Condition="!Exists('UsqlSDKBuild.targets') And '$(USQLSDKPath)' != '' And Exists('$(USQLSDKPath)\UsqlSDKBuild.targets')" />
+</Project>

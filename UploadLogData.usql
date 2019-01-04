@@ -1,0 +1,28 @@
+﻿REFERENCE ASSEMBLY WebLogData.Ariniisdemo;
+USING x = Ariniisdemo.Convertor;
+
+DROP TABLE IF EXISTS WebLogData.dbo.WebLogs;
+
+CREATE TABLE WebLogData.dbo.WebLogs (
+            Year        int,
+            Month       int,
+            Day         int,
+            IPInt    long,
+            IPPartition int,
+            TotalVisits         long?,
+            INDEX lmv_idx CLUSTERED (IPInt ASC)
+                  DISTRIBUTED BY RANGE (IPInt) INTO 255
+);
+
+@weblog = WebLogData.dbo.GetLogFiles ();
+
+INSERT INTO WebLogData.dbo.WebLogs
+SELECT s_date.Year AS Year,
+       s_date.Month AS Month,
+       s_date.Day AS Day,
+       x.GetIP(c_ip) AS IPInt,
+       x.GetPartitionID(c_ip) AS IPPartition,
+       COUNT(DISTINCT c_ip) AS cnt
+FROM @weblog
+GROUP BY s_date,
+         c_ip;

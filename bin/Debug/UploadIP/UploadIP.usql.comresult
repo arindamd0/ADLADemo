@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<CommonCompileResult xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ScriptPath>C:\Users\achowdhury\source\repos\ADLADemo\ADLADemo\bin\Debug\UploadIP\UploadIP.usql</ScriptPath>
+  <ErrorList>
+    <Diagnostic>
+      <ID>E_CSC_USER_DDLENTITYDOESNOTEXIST</ID>
+      <LineNumber>15</LineNumber>
+      <ColumnNumber>20</ColumnNumber>
+      <Start>25895</Start>
+      <End>25905</End>
+      <Message>Assembly 'WebLogData.Ariniisdemo' does not exist.</Message>
+      <Description>No entity of the required type has the specified name.</Description>
+      <Solution>Either check that the name is correct or create an entity with the specified name.</Solution>
+      <Severity>0</Severity>
+      <Category>Error</Category>
+      <InternalDebugInfo>E_CSC_USER_DDLENTITYDOESNOTEXIST: Assembly 'WebLogData.Ariniisdemo' does not exist.
+Description:
+No entity of the required type has the specified name.
+Resolution:
+Either check that the name is correct or create an entity with the specified name.... at token 'WebLogData', line 15
+near the ###:
+**************
+ehind_v5sl1ua5.dbx.pdb");
+
+REFERENCE ASSEMBLY [__codeBehind_v5sl1ua5.dbx];
+
+
+
+// Auto-generated header code ended
+
+// User script
+
+REFERENCE ASSEMBLY  ### WebLogData.Ariniisdemo;
+USING x = Ariniisdemo.Convertor;
+
+DROP TABLE IF EXISTS WebLogData.dbo.IPs;
+
+CREATE TABLE WebLogData.dbo.IPs (
+            ip_start
+**************
+jobId=, client=BLR-D-G94XXC2,ScopeCompiler.CompilationAbortedException: E_CSC_USER_DDLENTITYDOESNOTEXIST: Assembly 'WebLogData.Ariniisdemo' does not exist.
+Description:
+No entity of the required type has the specified name.
+Resolution:
+Either check that the name is correct or create an entity with the specified name.
+   at ScopeCompiler.FrontEnd.Ddl.SqlDdlResolver.&lt;&gt;c__DisplayClass214_0.&lt;AddUsing&gt;b__0(IRoslynTree syntaxTree, IRoslynSemanticModel semanticModel)
+   at ScopeCompiler.FrontEnd.RoslynBinder.Bind(IRoslynNode tree, Action`2 semanticAction)
+   at ScopeCompiler.FrontEnd.Ddl.SqlDdlResolver.AddUsing(UsingStatement usingStatement, Script script)
+   at ScopeCompiler.FrontEnd.Ddl.SqlDdlResolver.OnUsingStatement(Script input, UsingStatement e)
+   at ScopeCompiler.VisitorContext`1.Visit(T node, Action accept)
+   at ScopeCompiler.TreeVisitor`2.Visit(P input, IEnumerable`1 nodes)
+   at ScopeCompiler.VisitorContext`1.Visit(T node, Action accept)
+   at ScopeCompiler.FrontEnd.Ddl.SqlDdlResolver.OnBatch(Script input, Batch e)
+   at ScopeCompiler.VisitorContext`1.Visit(T node, Action accept)
+   at ScopeCompiler.FrontEnd.Ddl.SqlDdlResolver.Resolve(Batch batch)
+   at ScopeCompiler.FrontEnd.CompilePassHelper.Run(Action pass, Compiler compiler, CompilerTimer timer, Boolean throwOnErrors)
+   at ScopeCompiler.FrontEnd.CompileStrategy.DdlResolverPass(Batch batch)
+   at ScopeCompiler.FrontEnd.SqlAstBuilder.BuildAst(Compiler compiler, FunctionCall parentCall, NameContext nameContext, SubroutineType subroutineType, Script parent, DiagnosticCollection diagnostics, Script[] legacyScripts)
+   at ScopeCompiler.FrontEnd.SqlAstBuilder.BuildAst(Script[] scripts)
+   at ScopeCompiler.FrontEnd.SqlCompileStrategy.&lt;&gt;c__DisplayClass7_0.&lt;AstBuildingPass&gt;b__1()
+   at ScopeCompiler.FrontEnd.CompilePassHelper.Run(Action pass, Compiler compiler, CompilerTimer timer, Boolean throwOnErrors)
+   at ScopeCompiler.FrontEnd.SqlCompileStrategy.AstBuildingPass(Script inputLegacyScript, String[] scriptTexts)
+   at ScopeCompiler.FrontEnd.FrontEndRunner.Execute()
+   at ScopeCompiler.FrontEnd.CompilePipeline.DoExecutePipeline()
+   at ScopeCompiler.FrontEnd.CompilePipeline.DoCompile()</InternalDebugInfo>
+    </Diagnostic>
+    <Diagnostic>
+      <ID>E_CSC_USER_INVALIDCSHARP</ID>
+      <LineNumber>16</LineNumber>
+      <ColumnNumber>1</ColumnNumber>
+      <Start>25920</Start>
+      <End>25925</End>
+      <Message>C# error CS0246: The type or namespace name 'Ariniisdemo' could not be found (are you missing a using directive or an assembly reference?)</Message>
+      <Description>C# compiler reported that this expression is not valid C#.</Description>
+      <Solution>Make sure that a valid C# expression is specified.</Solution>
+      <Severity>0</Severity>
+      <Category>Error</Category>
+      <InternalDebugInfo>E_CSC_USER_INVALIDCSHARP: C# error CS0246: The type or namespace name 'Ariniisdemo' could not be found (are you missing a using directive or an assembly reference?)
+Description:
+C# compiler reported that this expression is not valid C#.
+Resolution:
+Make sure that a valid C# expression is specified.... at token 'USING', line 16
+near the ###:
+**************
+
+
+REFERENCE ASSEMBLY [__codeBehind_v5sl1ua5.dbx];
+
+
+
+// Auto-generated header code ended
+
+// User script
+
+REFERENCE ASSEMBLY WebLogData.Ariniisdemo;
+ ### USING x = Ariniisdemo.Convertor;
+
+DROP TABLE IF EXISTS WebLogData.dbo.IPs;
+
+CREATE TABLE WebLogData.dbo.IPs (
+            ip_start    string,
+            
+**************
+jobId=, client=BLR-D-G94XXC2,   at ScopeCompiler.CompilerDiagnostic.CreateInternal(DiagnosticCode code, Token anchor, Boolean pastTokenEnd, Script script, Object[] args, String id)
+   at ScopeCompiler.FrontEnd.RoslynBinder.EmitRoslynMessage(DiagnosticCode localErrorCode, Token messageLocation, Script script, DiagnosticCollection diagnosticTarget, String[] roslynMessages)
+   at ScopeCompiler.FrontEnd.RoslynBinder.EmitRoslynMessage(RoslynDiagnostic diagnostic, DiagnosticCollection diagnosticTarget, Script script, Token errorToken)
+   at ScopeCompiler.FrontEnd.Ddl.SqlDdlResolver.&lt;&gt;c__DisplayClass214_0.&lt;AddUsing&gt;b__0(IRoslynTree syntaxTree, IRoslynSemanticModel semanticModel)
+   at ScopeCompiler.FrontEnd.RoslynBinder.Bind(IRoslynNode tree, Action`2 semanticAction)
+   at ScopeCompiler.FrontEnd.Ddl.SqlDdlResolver.AddUsing(UsingStatement usingStatement, Script script)
+   at ScopeCompiler.FrontEnd.Ddl.SqlDdlResolver.OnUsingStatement(Script input, UsingStatement e)
+   at ScopeCompiler.VisitorContext`1.Visit(T node, Action accept)
+   at ScopeCompiler.TreeVisitor`2.Visit(P input, IEnumerable`1 nodes)
+   at ScopeCompiler.VisitorContext`1.Visit(T node, Action accept)
+   at ScopeCompiler.FrontEnd.Ddl.SqlDdlResolver.OnBatch(Script input, Batch e)
+   at ScopeCompiler.VisitorContext`1.Visit(T node, Action accept)
+   at ScopeCompiler.FrontEnd.Ddl.SqlDdlResolver.Resolve(Batch batch)
+   at ScopeCompiler.FrontEnd.CompilePassHelper.Run(Action pass, Compiler compiler, CompilerTimer timer, Boolean throwOnErrors)
+   at ScopeCompiler.FrontEnd.CompileStrategy.DdlResolverPass(Batch batch)
+   at ScopeCompiler.FrontEnd.SqlAstBuilder.BuildAst(Compiler compiler, FunctionCall parentCall, NameContext nameContext, SubroutineType subroutineType, Script parent, DiagnosticCollection diagnostics, Script[] legacyScripts)
+   at ScopeCompiler.FrontEnd.SqlAstBuilder.BuildAst(Script[] scripts)
+   at ScopeCompiler.FrontEnd.SqlCompileStrategy.&lt;&gt;c__DisplayClass7_0.&lt;AstBuildingPass&gt;b__1()
+   at ScopeCompiler.FrontEnd.CompilePassHelper.Run(Action pass, Compiler compiler, CompilerTimer timer, Boolean throwOnErrors)
+   at ScopeCompiler.FrontEnd.SqlCompileStrategy.AstBuildingPass(Script inputLegacyScript, String[] scriptTexts)
+   at ScopeCompiler.FrontEnd.FrontEndRunner.Execute()
+   at ScopeCompiler.FrontEnd.CompilePipeline.DoExecutePipeline()
+   at ScopeCompiler.FrontEnd.CompilePipeline.DoCompile()
+   at ScopeCompiler.FrontEnd.CompilePipeline.CreateContextAndCompile()
+   at ScopeCompiler.FrontEnd.CompilePipeline.Execute()
+   at Microsoft.Analytics.LocalRun.LocalParseSandboxer.PrivateParse(String script, Settings settings)
+   at System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr md, Object[] args, Object server, Object[]&amp; outArgs)
+   at System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(IMessage msg)
+   at System.Runtime.Remoting.Messaging.ServerObjectTerminatorSink.SyncProcessMessage(IMessage reqMsg)
+   at System.Runtime.Remoting.Messaging.ServerContextTerminatorSink.SyncProcessMessage(IMessage reqMsg)
+   at System.Runtime.Remoting.Channels.CrossContextChannel.SyncProcessMessageCallback(Object[] args)
+   at System.Threading.Thread.InternalCrossContextCallback(Context ctx, IntPtr ctxID, Int32 appDomainID, InternalCrossContextDelegate ftnToCall, Object[] args)
+   at System.Runtime.Remoting.Channels.CrossContextChannel.SyncProcessMessage(IMessage reqMsg)
+   at System.Runtime.Remoting.Channels.ChannelServices.SyncDispatchMessage(IMessage msg)
+   at System.Runtime.Remoting.Channels.CrossAppDomainSink.DoDispatch(Byte[] reqStmBuff, SmuggledMethodCallMessage smuggledMcm, SmuggledMethodReturnMessage&amp; smuggledMrm)
+   at System.Runtime.Remoting.Channels.CrossAppDomainSink.DoTransitionDispatchCallback(Object[] args)
+</InternalDebugInfo>
+    </Diagnostic>
+  </ErrorList>
+  <WarningList />
+  <HelperCodePath>C:\Users\achowdhury\source\repos\ADLADemo\ADLADemo\bin\Debug\UploadIP\__ScopeCodeGenEngine__.dll.cpp</HelperCodePath>
+  <ResourceList />
+  <ReferenceList />
+  <ClusterResourceList />
+  <InputStreams />
+  <LocalRunCachePath>C:\Users\achowdhury\source\repos\ADLADemo\ADLADemo\bin\Debug\UploadIP</LocalRunCachePath>
+  <LocalRunTempPath>C:\Users\achowdhury\source\repos\ADLADemo\ADLADemo\bin\Debug\UploadIP\_TMP</LocalRunTempPath>
+  <LocalRunRuntimePath>C:\Users\achowdhury\source\repos\ADLADemo\ADLADemo\bin\Debug\UploadIP</LocalRunRuntimePath>
+  <ScopeWorkingDir>C:\Users\achowdhury\source\repos\ADLADemo\ADLADemo\bin\Debug\UploadIP</ScopeWorkingDir>
+</CommonCompileResult>

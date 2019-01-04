@@ -1,0 +1,26 @@
+// Auto-generated header code
+
+// Auto-generated header code ended
+
+// User script
+
+@data =
+    SELECT Year,
+           Month,
+           Day,
+           IPInt,
+           TotalVisits,
+           IPPartition
+    FROM WebLogData.dbo.WebLogs;
+          // WHERE IPInt > 0;
+
+OUTPUT @data TO "/outputs/datatest.csv"
+    USING Outputters.Csv();
+
+// User script ended
+
+// Auto-generated footer code
+
+
+// Auto-generated footer code ended
+

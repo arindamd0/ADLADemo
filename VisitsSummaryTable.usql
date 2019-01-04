@@ -1,0 +1,12 @@
+﻿DROP TABLE IF EXISTS WebLogData.dbo.VisitSummary;
+
+CREATE TABLE WebLogData.dbo.VisitSummary (
+    Year int,
+    Month int,
+    Day int,
+    Location     string,
+    TotalVisits long?,
+    INDEX idx_lmdDW
+    CLUSTERED(Year ASC)
+    DISTRIBUTED BY RANGE (Year) INTO 50
+  );

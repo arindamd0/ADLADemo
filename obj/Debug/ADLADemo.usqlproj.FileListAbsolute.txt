@@ -1,0 +1,4 @@
+c:\users\achowdhury\source\repos\ADLADemo\ADLADemo\obj\Debug\ADLADemo.usqlproj.CoreCompileInputs.cache
+c:\users\achowdhury\source\repos\ADLADemo\ADLADemo\bin\Debug\ADLADemo.usqlpack
+c:\users\achowdhury\source\repos\ADLADemo\ADLADemo\obj\Debug\ADLADemo.usqlpack
+C:\Users\achowdhury\source\repos\ADLADemo\ADLADemo\obj\Debug\ADLADemo.usqlprojAssemblyReference.cache

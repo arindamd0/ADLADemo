@@ -1,0 +1,32 @@
+﻿REFERENCE ASSEMBLY WebLogData.Ariniisdemo;
+USING x = Ariniisdemo.Convertor;
+
+DROP TABLE IF EXISTS WebLogData.dbo.IPs;
+
+CREATE TABLE WebLogData.dbo.IPs (
+            ip_start    string,
+            ip_end      string,
+            continent   string,
+            country     string,
+            state       string,
+            city        string,
+            ip_start_int long,
+            ip_end_int long,
+            partitionid int,
+    INDEX idx_ip
+    CLUSTERED(ip_start_int ASC, ip_end_int ASC)
+                  DISTRIBUTED BY RANGE (partitionid) INTO 255
+);
+
+@ipdata = WebLogData.dbo.ProcessIPs();
+
+INSERT INTO WebLogData.dbo.IPs SELECT ip_start,
+       ip_end,
+       continent,
+       country,
+       state,
+       city,
+       x.GetIP(ip_start) AS ip_start_int,
+       x.GetIP(ip_end) AS ip_end_int,
+       x.GetPartitionID(ip_start) AS partitionid
+FROM @ipdata WHERE ip_start NOT LIKE "%:%";

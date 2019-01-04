@@ -1,0 +1,37 @@
+﻿@data =
+           SELECT Year, Month, Day, IPInt, TotalVisits, IPPartition
+           FROM WebLogData.dbo.WebLogs
+           WHERE IPInt > 0;
+/*
+OUTPUT @data TO "/outputs/data.csv"
+    USING Outputters.Csv();
+*/
+@ip = SELECT ip_start_int, ip_end_int, country, state, city, partitionid FROM WebLogData.dbo.IPs;
+
+/*
+OUTPUT @ip
+TO "/outputs/ip.csv"
+USING Outputters.Csv();
+*/
+@c =
+    COMBINE @data WITH @ip
+    ON IPPartition == partitionid
+    PRODUCE Year int,
+            Month int,
+            Day int,
+            Location string,
+            TotalVisits long?
+    USING new ADLADemo.MergeData();
+/*
+OUTPUT @c
+TO "/outputs/c.csv"
+USING Outputters.Csv();
+*/
+
+INSERT INTO WebLogData.dbo.VisitSummary
+SELECT Year,
+       Month,
+       Day,
+       Location,
+       TotalVisits
+FROM @c;

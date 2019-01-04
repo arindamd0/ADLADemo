@@ -1,0 +1,12 @@
+﻿@data =
+    SELECT Year,
+           Month,
+           Day,
+           IPInt,
+           TotalVisits,
+           IPPartition
+    FROM WebLogData.dbo.WebLogs;
+          // WHERE IPInt > 0;
+
+OUTPUT @data TO "/outputs/datatest.csv"
+    USING Outputters.Csv();

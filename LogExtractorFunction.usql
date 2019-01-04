@@ -1,0 +1,45 @@
+﻿
+DROP FUNCTION IF EXISTS WebLogData.dbo.GetLogFiles;
+
+CREATE FUNCTION WebLogData.dbo.GetLogFiles ()
+RETURNS @result TABLE
+(
+    s_date DateTime,
+        s_time string,
+        c_ip string,
+        cs_username string,
+        s_sitename string,
+        s_port int,
+        cs_method string,
+        cs_uristem string,
+        cs_uriquery string,
+        sc_status int,     
+        sc_substatus int,
+        sc_win32status int,
+        s_timetaken int,
+        cs_useragent string,
+        cs_referer string
+)
+AS
+BEGIN
+    @result = EXTRACT
+        s_date DateTime,
+        s_time string,
+        c_ip string,
+        cs_username string,
+        s_sitename string,
+        s_port int,
+        cs_method string,
+        cs_uristem string,
+        cs_uriquery string,
+        sc_status int,     
+        sc_substatus int,
+        sc_win32status int,
+        s_timetaken int,
+        cs_useragent string,
+        cs_referer string       
+        
+    FROM @"/iislogs/{*}.txt"
+    USING Extractors.Text(delimiter:' ',silent:true);
+    RETURN;
+END;
